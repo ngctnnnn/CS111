@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 #include <time.h>
 using namespace std;
 int main () {
@@ -10,11 +12,11 @@ int main () {
     int size;
     cin >> size;
     vector<int> a(size);
-    int key;
-    cin >> key;
+    // cin >> key;
     for (int i = 0; i < size;++i) 
         cin >> a[i];
 
+    int key = a[0];
     cout << "Key: " << key << "\n\n";
 
     start = clock();

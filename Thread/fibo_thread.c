@@ -3,9 +3,21 @@
 #include <time.h>
 #include <stdlib.h>
 
-long long sum;			   /* this data is shared by the thread(s) */
-void *runner(void *param); /* the thread */
+long long sum;	
+void *runner(void *param)
+{
+	sum = fibonacci((int)param);
+	pthread_exit(0);
+}
 
+int fibonacci(int x)
+{
+	if (x <= 1)
+	{
+		return 1;
+	}
+	return fibonacci(x - 1) + fibonacci(x - 2);
+}
 int main(int argc, char *argv[])
 {
 	clock_t start, end;
@@ -29,19 +41,4 @@ int main(int argc, char *argv[])
 	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
 	printf("Complete time: %f seconds\n", cpu_time_used);
 	// 	printf("Fibo of %d: %d\n", count, sum);
-}
-
-void *runner(void *param)
-{
-	sum = fibonacci((int)param);
-	pthread_exit(0);
-}
-
-int fibonacci(int x)
-{
-	if (x <= 1)
-	{
-		return 1;
-	}
-	return fibonacci(x - 1) + fibonacci(x - 2);
 }

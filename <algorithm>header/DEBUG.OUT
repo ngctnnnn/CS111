@@ -1,15 +1,15 @@
-Key: 98206
+Key: -10000000
 
-std::find() value is 98206
-time: 7.8e-05 ms
+std::find() value is -10000000
+time: 3.7e-05 ms
 
 std::binary_search() value is True
-Time: 3e-06 ms
-
-std::equal_range()'s range is [9809;9810)
-Time: 5e-06 ms
-
-std::upper_bound()'s range is 98209
-Time: 3e-06 ms
-std::lower_bound()'s range is 98206
 Time: 4e-06 ms
+
+std::equal_range()'s range is [0;1)
+Time: 4e-06 ms
+
+std::upper_bound()'s range is -9999994
+Time: 3e-06 ms
+std::lower_bound()'s range is -10000000
+Time: 2e-06 ms
