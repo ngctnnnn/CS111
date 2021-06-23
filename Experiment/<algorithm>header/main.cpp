@@ -16,7 +16,7 @@ int main () {
     for (int i = 0; i < size;++i) 
         cin >> a[i];
 
-    int key = a[0];
+    int key = a[a.size()>>1];
     cout << "Key: " << key << "\n\n";
 
     start = clock();
